@@ -1,0 +1,100 @@
+\section{Care and Maintenance}
+
+
+\subsection{General Cleaning}
+
+After your \instType{} has been in use, even for short periods of time, we recommend flushing your instrument with deionized water to solvate any crystals of indicator or salt that may have formed.
+{\color{red} WARNING: Failure to flush your \instType{} may result in your instrument's inability to function properly!}
+
+Please clean the exterior of your instrument with soap and water as well as removing any sea life and plants that have made their home on your \instType{}. All other care and subsequent refurbishment should be conducted by Sunburst Sensors unless previously advised by a Sunburst representative.
+
+
+\subsection{Clearing air-locked or clogged \instType{}-pH}
+\label{sec:AirLock}
+
+An air lock can occur when the instrument runs samples out of the water allowing air to be pumped into the \instType{}. If you are testing the \instType{} on a bench top, be sure to attach a bag of deionized water to the inlet or place the inlet into a beaker of deionized water. When deployed in water with high amounts of sediments, materials can also cause a clog in the instrument.  This can be cleared with the steps below.
+
+\begin{enumerate}
+
+    \item Fill the syringe with deionized water and connect to the intake tubing on the \instType{} (the tube protruding from the reagent chamber) as shown in Figure \ref{fig:SyringeFlush}.
+    
+    \begin{figure}[hb!]
+    \centering
+    \includegraphics[height=0.3\textheight]{figs/Syringe_\instType_Flush.png}
+    \caption{Using syringe to clear air lock.}
+    \label{fig:SyringeFlush}
+    \end{figure}
+    
+    \item Connect the \instType{} to a computer with the client software installed; connect to the instrument and start the software. In the \textbf{Utility} tab under the \textbf{Cycle Pump} panel, set the \textbf{\# cycles} to 10. Apply a constant pressure to the syringe and click \textbf{Run}.  \textbf{Open Valve} should \textit{NOT} be checked.
+    
+    The deionized water should move through the system and come out of the cell outlet tube (top of \instType{}). This step may be repeated a couple of times. If the water does not move through the instrument, contact Sunburst Sensors for additional technical support. 
+    
+    \item Once fluid begins to move through the system, insert the intake tubing (the tube with the blue fitting where the syringe was attached) into a beaker with a few hundred milliliters of deionized water, or connect the blank bag to the inlet. 
+    
+    \item Next flush the \instType{} using deionized water from the beaker or the bag. On the Utility tab under the \textbf{Cycle Pump} panel set the \# of cycles to 99 and click on \textbf{Run}. Make sure the intake tube is in the deionized water before pressing the \textbf{Run} button.  \textbf{Open Valve} should \textit{NOT} be checked.
+    
+    The deionized water should move through the system normally. If the water is not moving through the instrument, contact Sunburst Sensors for technical support at techsupport@sunburstsensors.com.
+    
+    \item Once water runs through the instrument, reconnect the tubing to the mixer. 
+    
+    \item Insert the intake tubing (the tube with the blue fitting where the syringe was attached) into a beaker with a few hundred milliliters of deionized water or connect the blank bag to the inlet. 
+    
+    \item Next flush the \instType{} using deionized water from the beaker or bag. On the Utility tab under the \textbf{Cycle Pump} panel set the \# of cycles to 99 and click on \textbf{Run}. Make sure the intake tube is in the deionized water before pressing the \textbf{Run} button.  \textbf{Open Valve} should \textit{NOT} be checked.
+    
+    If the water is not moving through the instrument, contact Sunburst Sensors for additional technical support.
+   
+\ifcase \inst	%iSAMI
+
+    % Don't say anything about brass cage.
+
+\or			%SAMI
+
+    \item If the \instType{} is functioning correctly, re-attach the brass cage using zip ties. Trim off the remaining tails of the zip ties.
+
+\or			%AFT
+
+    % Don't say anything about brass cage.
+    
+\fi
+
+\end{enumerate}
+
+\clearpage
+
+
+\section{Troubleshooting}
+
+These are a few common questions that we receive at Sunburst Sensors. If you do not see your question here, please contact us at techsupport@sunburstsensors.com. 
+
+\paragraph{\underline{What do I do if I cannot communicate with the instrument?}}
+You will not be able to communicate with your instrument if the correct serial port has not been selected. In SAMI\_Client select \textbf{Edit $\rightarrow$ Preferences} and try choosing another serial port from the menu. Many times it may take some time for the computer to fully populate the list. You may need to wait until another serial port appears in the drop-down menu.  The COM port on the PC will typically be the last one in the list. On a Mac the serial port will be named \verb|USB-serial XXXXXXXX| where ``X'' represents alpha-numeric characters.
+
+On Windows operating systems (XP, Vista, 7, 10) it is sometimes helpful to go to the Device Manager (Control Panels, System and Maintenance, System) and look for the Ports to verify your USB-Serial converter is working.  There should be at least one USB Serial Port under \textbf{Ports (COM \& LPT)}. Double click to open and verify that it is the FTDI converter and not some other device.  Use this port number in the SAMI Client Preferences.
+
+If you do not see a USB serial port, it is likely that you will need to install the driver. Try unplugging and re-plugging the cable to the PC. This should prompt an install dialog. The driver is on the install CD and can also be found here: \url{http://ftdichip.com/Drivers/VCP.htm}
+
+On some PCs switching to another USB port will solve the problem. Also, it is occasionally useful to restart the \instType{} Client software and/or the PC itself.
+
+\paragraph{\underline{What happens if the signals drop?}}
+This is very likely due to an obstruction in the path of the optical cell. Commonly, it is air bubbles which can be flushed out by continually pumping. If you use the \textbf{Cycle Pump} function on the Utility Tab of SAMI\_Client to pump deionized water (after attaching DI bag to inlet) through the instrument the problem will often be resolved.
+
+\paragraph{\underline{What should the signal intensities be?}}
+
+\ifcase \inst	%iSAMI
+
+Signal intensities can range from 0 to 16383. If any signal intensity is at or near 16000, the channel may be saturated with light, giving erroneous results. Reference and signal intensities should be greater than $\sim$\,6000 for a blank (DI, seawater, etc.).  Lower intensities will result in higher noise in absorbance and thus pH measurements. However, if during a measurement signal intensities are low but reference intensities are not, the flow cell needs to be flushed. Dark signals will normally range from $\sim$\,200--400. Higher or erratic dark signals could indicate an electronic problem with your \instType{}.  Contact Sunburst if any abnormal signals cannot be rectified.
+
+\else			%SAMI/AFT
+
+Signal intensities can range from 0 to 4905. If any signal intensity is at or near 4800, the channel may be saturated with light, giving erroneous results. Reference and signal intensities should be greater than $\sim$\,2000 for a blank (DI, seawater, etc.).  Lower intensities will result in higher noise in absorbance and thus pH measurements. However, if during a measurement signal intensities are low but reference intensities are not, the flow cell needs to be flushed. Dark signals will normally range from $\sim$\,100--200. Higher or erratic dark signals could indicate an electronic problem with your \instType{}.  Contact Sunburst if any abnormal signals cannot be rectified.
+
+\fi
+
+\paragraph{\underline{How do I flush my \instType{}?}}
+There is a function on the Utility Tab of the \instType{} Client labeled \textbf{Cycle Pump}. Under cycle pump you may flush your \instType{} without disrupting the programmed measurement routine.  In addition, the user may use the de-clogging kit that is included with all new pH instruments.  See the next chapter for instructions on using the de-clogging kit.
+
+\paragraph{\underline{My Spreadsheet Maker did not populate the Column Set List!}}
+It is very likely that the file included on your instrument disc was not copied over to your computer. Please double check that every file on the disc has been successfully transferred including a file labeled \verb|ColumnSettings.txt|.   
+
+\paragraph{\underline{What if I cannot rectify my problem?}}
+Contact Sunburst Sensors, our information is found on the front of this manual. We will work with you to find the fastest and most economical solution to your problem. Never hesitate to give us a call or send us an e-mail at techsupport@sunburstsensors.com.

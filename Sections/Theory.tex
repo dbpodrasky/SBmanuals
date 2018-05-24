@@ -1,0 +1,109 @@
+\section{\instType{}-pH Theory of Operation}
+
+\mCP{}, a pH sensitive dye that has been purified to use in \instType{} instruments to increase measurement accuracy (Liu et al 2011).  A seawater sample stream is pumped through the instrument and injected with a pH-sensitive indicator solution (\mCP{}). Two wavelength-specific LEDs send alternating pulses of light through the indicator-sample mixture as it is pumped through a flow cell. Changes in absorbance at the two wavelengths, Beer's law, and the known molar absorptivities of the indicator can be used to calculate the concentration of protonated and un-protonated indicator.  The indicator \pKa is then used to calculate pH using a derivation of the Henderson-Hasselbach equation. 
+
+
+\subsection{Equilibrium Reaction}
+
+Spectrophotometric pH determination is based on the equilibrium reaction of a pH-dependent indicator. A diprotic sulfonephthalein indicator, \mCP{}, is used as the reagent. \ifcase \inst {A single 25\,$\mathrm{\mu L}$ pulse} \else {A single 50\,$\mathrm{\mu L}$ pulse} \fi of reagent is introduced into the seawater stream. The acidic (\ce{HI-}) and basic (\ce{I$^{2-}$}) forms of the indicator are found in varying quantities based on the pH of the seawater being tested.
+
+Indicator equilibrium is described by Equation \ref{eq:equilibrium}:
+
+\begin{equation}
+\label{eq:equilibrium}
+\ce{HI- <=>[{K_a}'] H+ + I^2-}
+\end{equation}
+
+where ${K_a}'$ is the apparent dissociation constant. The acidic and basic forms of the indicator are measured at peak absorbance wavelengths of 434\,nm (\ce{HI-}) and 578\,nm (\ce{I$^{2-}$}), respectively. The diprotic \ce{H2I} form is not present at seawater pH and therefore is not considered in our applications.
+
+Combining the log form of the indicator equilibrium expression, Beer's Law, and the Henderson-Hasselbalch equations results in Equation \ref{eq:H-H}.
+
+\begin{equation}
+\label{eq:H-H}
+pH = {pK_a}' + log \left(\frac{R - e_1}{e_2 - R e_3}\right),
+\end{equation}
+
+where ${pK_a}'$ is the log of the apparent dissociation constant, $R$ is the absorbance ratio $A_{578}/A_{434}$ and the $e_i$ are the temperature-dependent ratios of the molar absorptivities ($\epsilon$) of \ce{HI-} and \ce{I$^{2-}$} at 434 and 578\,nm. Equations 3--10 define temperature-dependent values for $pK_a$$'$ and $e_i$ used for purified \mCP in \instType{} instruments. $T$ is temperature in Kelvin, $t$ is temperature in Celcius, and $S$ is salinity.
+
+\begin{equation}
+\label{eq:pKa}
+  \begin{aligned}
+ {pK_a}' = &-241.462 + 7085.72T^{-1} + 43.8332ln(T) - 0.0806406T - 0.3238S^{0.5} + 0.0807S\\
+           & - 0.01157S^{1.5} + 0.000694S^2 + 0.6367
+   \end{aligned}
+\end{equation}
+
+\begin{equation}
+\label{eq:e1}
+e_1 = {\epsilon}a_{578}/{\epsilon}a_{434}
+\end{equation}
+
+\begin{equation}
+\label{eq:e2}
+e_2 = {\epsilon}b_{578}/{\epsilon}a_{434}
+\end{equation}
+
+\begin{equation}
+\label{eq:e3}
+e_3 = {\epsilon}b_{434}/{\epsilon}a_{434}
+\end{equation}
+
+\begin{equation}
+\label{eq:ea434}
+{\epsilon}a_{434} = 17372 + 20.162(24.80 - t)
+\end{equation}
+
+\begin{equation}
+\label{eq:ea578}
+{\epsilon}a_{578} = 94.1 - 1.0177(24.80 - t)
+\end{equation}
+
+\begin{equation}
+\label{eq:eb434}
+{\epsilon}b_{434} = 2284.1 - 6.3863(24.86 - t)
+\end{equation}
+
+\begin{equation}
+\label{eq:eb578}
+{\epsilon}b_{578} = 38676 + 66.808(24.86 - t)
+\end{equation}
+
+
+\subsection{Optical Path}
+
+The \instType{} uses pulsed LEDs with narrow band filters at wavelengths corresponding to maximum optical absorbance for the protonated and deprotonated forms of the reagent.  A reference photodiode tracks changes in the light sources.  LEDs are imbedded in the flow cell which is mounted on the controller board.  The flow-cell optical path length is 1\,cm. 
+
+
+\subsection{Fluid Path}
+
+The \instType{}-pH uses a \ifcase \inst {25\,$\mathrm{\mu L}$} \else {50\,$\mathrm{\mu L}$} \fi solenoid pump to drive reagent through the system. A solenoid valve allows the same pump to introduce a single pulse of reagent into the stream for each pH measurement. A card with engraved cicuitous flowpath upstream of the flow cell ensures thorough mixing of the sample and reagent prior to optical measurements. The sample's blank signal intensity ($I_0$) is established by taking measurements while pumping pure sample through the flow cell.  After measuring the blank signal, reagent is introduced into the flow stream and signal intensity ($I$) is collected as the pump pushes the mixture through the flow-cell.  At each measurement, reference intensities ($I_{0_{ref}}$ and $I_{ref}$) are also measured.  The absorbance at each wavelength is calculated as:
+
+\begin{equation}
+\label{eq:Abs}
+A = -log \left( \frac{I}{I_0}\times \frac{I_{0_{ref}}}{I_{ref}} \right)
+\end{equation}
+
+
+\subsection{pH Perturbation and Data Record}
+
+Each pH data record consists of 28 light intensity measurements at each wavelength.  The first four measurements are averaged and used as the blank intensity values ($I_0$).  pH and indicator concentration are calculated for each of the subsequent measurements.  The addition of the \mCP indicator will slightly alter the pH of the sample. The pH of the initial sample is determined by extrapolating to the pH at zero indicator concentration using a regression of pH vs. indicator concentration (Seidel et al. 2008).
+
+
+\subsection{Validation}
+
+The \instType{}-pH is validated by measuring the pH of Tris buffer at $\sim$\,25\,$\degree$C. pH accuracy is better than or equal to \ifcase \inst {$\pm$\,0.007} \else {$\pm$\,0.004} \fi at the time the \instType{} is sent to the customer.
+
+
+\subsection{References}
+
+For more information see the following references:
+
+Delvalls, T.A., Dickson, A.G., 1998.  The pH of Buffers Based on 2-amino-2-hydroxymethyl-1,3-propanediol. Deep-Sea Research I, 45, 1541--1554.
+
+Liu, X., Patsavas, M.C., Byrne, R.H., 2011. Purification and Characterization of meta-Cresol Purple for Spectrophotometric Seawater pH Measurements.  Environmental Science and Technology, 45, 4862--4868.
+
+DeGrandpre, M.D., Spaulding, R.S., Newton, J.O., Jaqueth, E.J., Hamblock, S.E., Umansky, A.A., Harris, K.E, 2014. Considerations for the measurement of spectrophotometric pH for ocean acidification and other studies. Limnology and Oceanography: Methods. 12, 830--839.
+
+Martz, T.R., Carr, J.J., French, C.R., DeGrandpre, M.D., 2003. A submersible autonomous sensor for spectrophotometric pH measurements of natural waters. Anal. Chem, 75, 1844--1850
+
+Seidel, M.P., DeGrandpre, M.D., Dickson, A.G., 2008. A sensor for in situ indictor-based measurements of seawater pH. Mar Chem. 109, 18--28.

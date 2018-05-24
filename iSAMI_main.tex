@@ -1,0 +1,151 @@
+\documentclass[twoside,letterpaper]{article}
+
+% Define a macro to display iSAMI as appropriate
+\newcommand{\instType}{iSAMI}
+
+% Define instrument case as AFT. iSAMI (0), SAMI (1), AFT (2)
+\newcommand\inst{0}
+
+\usepackage{emptypage}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{natbib}
+\usepackage{outlines}
+\usepackage{enumitem}
+\usepackage{lineno}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage[hidelinks]{hyperref}
+\usepackage{todonotes}
+\usepackage{floatrow}
+\usepackage[export]{adjustbox}
+\usepackage{caption}
+\usepackage{capt-of}
+\usepackage{color}
+\usepackage{placeins}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage[version=3]{mhchem}
+\usepackage{tgheros}
+\usepackage{amsmath}
+\usepackage{chapterbib}
+\usepackage{gensymb}
+\setcounter{tocdepth}{2}
+\usepackage[T1]{fontenc}
+\usepackage{dirtytalk}
+\usepackage{float}
+\usepackage[markup=underlined]{changes}
+
+% Author definitions for tacking changes with changes package
+\definechangesauthor[color=blue]{DBP}
+\newcommand{\note}[2][]{\added[#1,remark={#2}]{}}
+\usepackage{todonotes}
+\setlength{\marginparwidth}{3cm}
+\makeatletter
+\setremarkmarkup{\todo[color=Changes@Color#1!20,size=\scriptsize]{#1: #2}}
+\makeatother
+
+% Define some macros for commonly used, but annoying to type, abbreviations
+\newcommand{\pKa}{$\mathrm{pK_a}$}
+\newcommand{\dioxide}{$\mathrm{CO}_2$}
+\newcommand{\water}{$\mathrm{H}_2\mathrm{O}$}
+\newcommand{\mCP}{\textit{m}CP}
+
+% Define a custom environment to change the font for Warranty section
+\newenvironment{sans}{\fontfamily{phv}\selectfont}{\par}
+
+% Define a custom environment to change the font for Low Level section
+\newenvironment{courier}{\fontsize{12pt}{12pt}\fontfamily{pcr}\selectfont}{\par}
+\DeclareTextFontCommand{\cmdfont}{\courier}
+
+
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
+\geometry{top=1in, bottom=1in}
+\begin{document}
+
+%\linenumbers
+
+\let\oldsection\section
+\def\section{\cleardoublepage\oldsection}
+
+\newgeometry{centering}
+\begin{titlepage}
+	\thispagestyle{empty}
+		\begin{nolinenumbers}
+           \vspace*{-3cm}
+           \begin{center}
+				{\Huge \textsf{\textbf{Operation Manual iSAMI-pH\\}}}
+                \vspace{0.5cm}
+                \includegraphics[scale=0.7]{figs/iSAMIsmall.png}
+			\end{center}
+			\vspace*{\fill}
+
+        \begingroup
+            \centering
+			\begin{minipage}[b]{0.5\hsize}
+			\raggedright
+			\includegraphics[scale=0.7]{figs/SBlogo.jpg}
+			\end{minipage}
+			\noindent
+			\begin{minipage}[b]{0.5\hsize}
+			\raggedleft
+			\small
+            
+			Sunburst Sensors, LLC\\
+			1226 W Broadway Ave\\
+			Missoula, MT 59802\\
+			+1 406 532 3247\\
+            \url{www.sunburstsensors.com}\\
+            info@sunburstsensors.com\\
+			\end{minipage}
+        \endgroup
+			
+		\end{nolinenumbers}
+\end{titlepage}
+\restoregeometry
+
+% Add blank leaf after title page
+\newpage\null\thispagestyle{empty}\newpage
+\newpage\null\thispagestyle{empty}\newpage
+
+\addtocontents{toc}
+{\protect\thispagestyle{empty}}
+\tableofcontents
+{\protect\thispagestyle{empty}}
+\cleardoublepage
+% Add blank leaf after contents
+\newpage\null\thispagestyle{empty}\newpage
+\newpage\null\thispagestyle{empty}\newpage
+
+\setcounter{page}{1}
+
+
+%%%%%%%%%%%%%%%
+%%  Load chapters here  %%
+%%%%%%%%%%%%%%%
+
+\cleardoublepage\thispagestyle{empty}
+\include{Sections/Intro}
+\cleardoublepage\thispagestyle{empty}
+\include{Sections/Deployment}
+\cleardoublepage\thispagestyle{empty}
+\include{Sections/Theory}
+\cleardoublepage\thispagestyle{empty}
+\include{Sections/Client}
+\cleardoublepage\thispagestyle{empty}
+\include{Sections/QC_pH}
+\cleardoublepage\thispagestyle{empty}
+\include{Sections/Trouble_PH}
+\cleardoublepage\thispagestyle{empty}
+\include{Sections/LowLevel_PH}
+\cleardoublepage\thispagestyle{empty}
+\include{Sections/Warranty}
+\cleardoublepage\thispagestyle{empty}
+\include{Sections/MSDS}
+
+
+\end{document}
