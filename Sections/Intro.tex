@@ -1,60 +1,95 @@
-\section{Cleaning your \instType{} for return to Sunburst Sensors}
+\section*{Cleaning your \instType{} for return to Sunburst Sensors}
+\label{sec:Cleaning}
+\addcontentsline{toc}{section}{\nameref{sec:Cleaning}}
 
-\noindent
-\begin{minipage}[t]{0.5\textwidth}
-\centering
-\raisebox{\dimexpr \topskip-\height}
-{
-   \includegraphics[width=0.9\textwidth]{figs/Foul.png}
-}
-\end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
-Please help us speed up your service by properly cleaning your \instType{} before return.  \instType{}s that are returned with excessive biofouling may be subject to additional cleaning and processing charges.\\
-
-\begin{enumerate}
-\item Gently remove biological material from the surface of the \instType{}.  Do not use abrasive pads or metal scrapers as these may damage the housing.\\
-
-%\ifiSAMI
-%	% If iSAMI don't talk about brass cage and fibers.
-%\else
-%	\item If there is significant fouling inside the brass cage areas of the instrument, remove the cage and spray a moderate stream of water to remove what will easily come off.  Be careful of the fiber optics and tubing.  The brass cage can be discarded.\\
-%\fi
-
-\ifcase \inst
-	% If iSAMI don't talk about brass cage and fibers.
-\or
-	\item If there is significant fouling inside the brass cage areas of the instrument, remove the cage and spray a moderate stream of water to remove what will easily come off.  Be careful of the fiber optics and tubing.  The brass cage can be discarded.\\
-\or
-	This is an AFT.
-\fi
-
-\item After completing the above steps, please allow 24 to 48 hours in a dry area before packing up the instrument. \textbf{Never wrap a wet \instType{} in plastic and return to Sunburst}.
+\ifcase \inst	%iSAMI
+    \noindent
+    \begin{minipage}[t]{0.5\textwidth}
+    \centering
+    \raisebox{\dimexpr \topskip-\height}
+    {
+       \includegraphics[width=0.9\textwidth]{figs/Foul.png}
+    }
+    \end{minipage}
+    \begin{minipage}[t]{0.5\textwidth}
+    Please help us speed up your service by properly cleaning your \instType{} before return.  \instType{}s that are returned with excessive biofouling may be subject to additional cleaning and processing charges.\\
+    
+    \begin{enumerate}
+    \item Gently remove biological material from the surface of the \instType{}.  Do not use abrasive pads or metal scrapers as these may damage the housing.\\
+    
+    \item After completing the above steps, please allow 24 to 48 hours in a dry area before packing up the instrument. \textbf{Never wrap a wet \instType{} in plastic and return to Sunburst}.
 \end{enumerate}
 
-\ifiSAMI
     \vspace*{6.5cm}
-\else
+    \noindent
+    To make cleaning easier, 10\,mil PVC corrosion protection tape can be applied to the \instType{} pre-deployment and then removed along with fouling at the end of deployment. This is available from many suppliers such as McMaster Carr:
+    \newline
+    \url{http://www.mcmaster.com/#7621A11}
+    \end{minipage}
+
+\or	%SAMI2
+    \noindent
+    \begin{minipage}[t]{0.5\textwidth}
+    \centering
+    \raisebox{\dimexpr \topskip-\height}
+    {
+       \includegraphics[width=0.9\textwidth]{figs/Foul.png}
+    }
+    \end{minipage}
+    \begin{minipage}[t]{0.5\textwidth}
+    Please help us speed up your service by properly cleaning your \instType{} before return.  \instType{}s that are returned with excessive biofouling may be subject to additional cleaning and processing charges.\\
+    
+    \begin{enumerate}
+    \item Gently remove biological material from the surface of the \instType{}.  Do not use abrasive pads or metal scrapers as these may damage the housing.\\
+    
+    \item If there is significant fouling inside the brass cage areas of the instrument, remove the cage and spray a moderate stream of water to remove what will easily come off.  Be careful of the fiber optics and tubing.  The brass cage can be discarded.\\
+    
+    \item After completing the above steps, please allow 24 to 48 hours in a dry area before packing up the instrument. \textbf{Never wrap a wet \instType{} in plastic and return to Sunburst}.
+\end{enumerate}
+
     \vspace*{4cm}
-\fi
+    \noindent
+    To make cleaning easier, 10\,mil PVC corrosion protection tape can be applied to the \instType{} pre-deployment and then removed along with fouling at the end of deployment. This is available from many suppliers such as McMaster Carr:
+    \newline
+    \url{http://www.mcmaster.com/#7621A11}
+    \end{minipage}
 
-\noindent
-To make cleaning easier, 10\,mil PVC corrosion protection tape can be applied to the \instType{} pre-deployment and then removed along with fouling at the end of deployment. This is available from many suppliers such as McMaster Carr:
-\newline
-\url{http://www.mcmaster.com/#7621A11}
-\end{minipage}
+\or	%AFT
+    After making seawater measurements and before storing the AFT or returning it to Sunburst Sensors for refurbishment, the AFT wet chamber should be flushed with deionized water after removal from a seawater line to prevent mineral and/or reagent build-up in the plumbing. The lid to the wet chamber should be removed (Figure \ref{fig:AFTwet1}), and the surfaces gently wiped with a clean cloth before long term storage.  The flow cell should also be flushed with deionized water using the proceedure described in section \ref{sec:Software}.
+    
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/AFT_wet.jpg}
+    \label{fig:AFTwet1}
+    \end{figure}
 
+\fi	%END
 
 \newpage
 \restoregeometry
 
-\section{Warnings and Safety}
+
+\section*{Warnings and Safety}
+\label{sec:Warning}
+\addcontentsline{toc}{section}{\nameref{sec:Warning}}
+
+\ifcase \inst	%iSAMI
 
 To prevent damage to the Submersible Autonomous Moored Instrument (\instType{}), please carefully read the operating instructions before attempting to use your instrument. The cable provided is for bench-top programming and download of the \instType{} data, and can be used for shallow laboratory submersion.  IT IS NOT MEANT TO BE DEPLOYED!
 
+\or			%SAMI
+
+To prevent damage to the Submersible Autonomous Moored Instrument (\instType{}), please carefully read the operating instructions before attempting to use your instrument. The cable provided is for bench-top programming and download of the \instType{} data, and can be used for shallow laboratory submersion.  IT IS NOT MEANT TO BE DEPLOYED!
+
+\or			%AFT
+
+To prevent damage to the Autonomous Flow-Through instrument (\instType{}), please carefully read the operating instructions before attempting to use your instrument. The cable provided is for bench-top programming and download of the \instType{} data and is NOT submersible!
+
+\fi			%END
 
 \subsection*{Handling}
 
-The \instType{} is reagent-based with the reagent stored in sealed foil bags underneath the instrument.  It is possible, though very unlikely, that these bags may leak or rupture. In case of exposure to the reagent, please refer to the material safety data sheets in the appendix of this manual.
+The \instType{} is reagent-based with the reagent stored in sealed foil bags underneath the instrument.  It is possible, though very unlikely, that these bags may leak or rupture. In case of exposure to the reagent, please refer to the material safety data sheets in section \ref{sec:MSDS} of this manual.
 
 
 \subsection*{\instType{} Power}
@@ -68,8 +103,7 @@ The \instType{} can be powered externally (10--13\,VDC). Observe common safety p
 
 The rugged instrument case for your \instType{} should contain the following upon arrival:
 
-% Use a different list for iSAMI/SAMI
-\ifiSAMI
+\ifcase \inst	%iSAMI
     \begin{enumerate}
     \item \instType{}-pH Instrument.
     \item \instType{} Operating Manual.
@@ -79,7 +113,8 @@ The rugged instrument case for your \instType{} should contain the following upo
     \item Pre-Deployment Checklist.
     \item Battery pack (if ordered).
     \end{enumerate}
-\else
+
+\or			%SAMI
     \begin{enumerate}
     \item \instType{}-pH Instrument.
     \item \instType{} Operating Manual.
@@ -93,10 +128,25 @@ The rugged instrument case for your \instType{} should contain the following upo
     
     \noindent
     Your stainless steel mooring cage, if ordered for a \instType{}, will ship separately.
-\fi
+
+\or			%AFT
+
+    \begin{enumerate}
+    \item \instType{}-pH Instrument
+    \item \instType{} Operating Manual
+    \item Communication/Power Cable
+    \item \instType{} Software Disc
+    \item De-Clogging Kit for air-locked pump
+    \item Pre-Deployment Checklist
+    \item Inlet pressure gauge assembly
+    \item Any external instruments or reagent ordered, though these may ship separately.
+    \end{enumerate}
+\fi			%END
 
 \noindent
 If any of these materials is damaged or missing, please contact Sunburst Sensors immediately.
+
+\clearpage
 
 
 \subsection{Overview of Communication}
@@ -108,51 +158,46 @@ If any of these materials is damaged or missing, please contact Sunburst Sensors
 \label{fig:OperationFig}
 \end{figure}
 
-Figure \ref{fig:OperationFig} gives an overview of how the \instType{}-pH operates and interacts with the \textbf{SAMI_Client} software.  The \instType{} uses a time-stamped, records based system to store and transmit data.  There are two main types of records; Data and Status.  Data records consist of raw measurement data, while status records contain information about the state of the instrument (start, stop, battery low, error, etc.)
+
+Figure \ref{fig:OperationFig} gives an overview of how the \instType{}-pH operates and interacts with the \instType{}-Client software.  The \instType{} uses a time-stamped, records based system to store and transmit data.  There are two main types of records; Data and Status.  Data records consist of raw measurement data, while status records contain information about the state of the instrument (start, stop, battery low, error, etc.)
 
 Once running, all records are stored to internal memory for later download.  Additionally they are transmitted over the serial port, though for energy efficiency the port only wakes up long enough to send the data. 
 
-Data records transmitted to the client can be displayed in real time.
+Data records transmitted to the client can be displayed in real time via the \textbf{Real Time Data} button (enabled once data is detected). The user selects a column set to choose which quantities to view.  Data can be shown in columnar (spread-sheet) display or as a graph.  The \instType{}-Client comes with a variety of existing column sets, but the user may create custom column sets as well.
 
-The \textbf{SAMI_Client} software sends configuration data (start time, sampling interval, etc.) and commands to the \instType{} (start, stop, erase, etc.)  It also allows the download of data from the instrument.  Data is downloaded into a text file that contains the configuration data and raw signal intensities as well as any status records.  The user can then open and parse that file using the \textbf{SAMI_Client}.
+The \instType{}-Client software sends configuration data (start time, sampling interval, etc.) and commands to the \instType{} (start, stop, erase, etc.)  It also allows the download of data from the instrument.  Data is downloaded into a text file that contains the configuration data and raw signal intensities as well as any status records.  The user can then open and parse that file using the \textbf{Open Data File} button or menu item.  Again, the user selects \textbf{column sets} to choose which data to display.
 
 Data can be exported to tab-delimited files for use in other graphing or analytical software from the data viewer.
 
 
 \subsection{\instType{}-pH Hardware}
 
-% if SAMI, talk about pressure housing and p/v housing, etc.
-\ifiSAMI
-    The \instType{} consists of the water sealed electronics housing and the reagent housing.  These are described below.
-\else
-    The \instType{} consists of a pressure housing, reagent housing, pump/valve housing and the sampling area.  These are described below.
-\fi
+\ifcase \inst	%iSAMI
+    The \instType{} consists of the water-sealed electronics housing and the reagent housing.  These are described below.
 
-\ifiSAMI
     \begin{wrapfigure}[25]{r}{0.5\textwidth}
     \centering
        \includegraphics[width=0.9\textwidth]{figs/\instType_pic.png}
     \caption{\instType{}-pH.}
     \label{fig:\instType{}pH}
     \end{wrapfigure}
-\else
+    
+        \textbf{Electronics Housing:} The electronics housing contains the controller board, back-up batteries, optics, and integrated pump, valve, mixer and optical cell. \textbf{The \instType{} pump is not pressure-compensated. The \instType{} can therefore only be used from the surface to 3 m depth.} The communication-power bulkhead fitting is located on the top of the housing. The tubing protruding from the top of the \instType{} is the sample outlet.\\
+    
+    \textbf{Reagent Housing:} The reagent housing, found on the bottom of the instrument, holds and protects the reagent bag but is open to the environment to maintain pressure equilibrium. A bag containing nanopure water or \say{blank} will be attached to the inlet tubing protruding from the reagent housing. This tubing is the sample inlet, and the bag must therefore be removed before deploying the \instType{}. Be careful to not introduce air bubbles when removing the bag.\\
+    
+    \textbf{Cable:} See Section \ref{Cable}.
+
+\or			%SAMI
+    The \instType{} consists of a pressure housing, reagent housing, pump/valve housing and the sampling area.  These are described below.
+
     \begin{wrapfigure}[32]{r}{0.5\textwidth}
     \centering
        \includegraphics[width=0.9\textwidth]{figs/\instType_pic.png}
     \caption{\instType{}2-pH.}
     \label{fig:\instType{}pH}
     \end{wrapfigure}
-\fi
-
-
-% Use a different list to describe iSAMI/SAMI
-\ifiSAMI
-    \textbf{Electronics Housing:} The electronics housing contains the controller board, back-up batteries, optics, integrated pump, valve, mixer, and optical cell. \textbf{The \instType{} pump is not pressure-compensated. The \instType{} can therefore only be used from the surface to 3 m depth.} The communication-power bulkhead fitting is located on the top of the housing. The tubing protruding from the top of the \instType{} is the sample outlet.\\
     
-    \textbf{Reagent Housing:} The reagent housing, found on the bottom of the instrument, holds and protects the reagent bag but is open to the environment to maintain pressure equilibrium. A bag containing nanopure water or \say{blank} will be attached to the inlet tubing protruding from the reagent housing. This tubing is the sample inlet, and the bag must therefore be removed before deploying the \instType{}. Be careful to not introduce air bubbles when removing the bag.\\
-    
-    \textbf{Cable:} See Section \ref{Cable}.
-\else
     \textbf{Pressure Housing:} The pressure housing contains the controller board, batteries and optics. The communication-power bulkhead fitting is located on the top of the housing. Other bulkhead fittings will be present if external instruments are being supported.\\
     
     \textbf{Sampling Area:} Wrapped in a protective perforated brass housing (not shown), this area is open to the environment. It contains the flow cell, the mixing coil, fiber optics and thermistor. A bag containing nanopure water or \say{blank} will be attached to the inlet tubing protruding from the brass housing. This tubing is the sample inlet, and the bag must therefore be removed before deploying the \instType{}. Be careful to not introduce air bubbles when removing the bag.\\
@@ -162,4 +207,23 @@ Data can be exported to tab-delimited files for use in other graphing or analyti
     \textbf{Reagent Housing:} The reagent housing, found on the bottom of the instrument, holds and protects the reagent bag but is open to the environment to maintain pressure equilibrium.\\
     
     \textbf{Cable:} See Section \ref{Cable}.
-\fi
+
+\or			%AFT
+    The \instType{} is divided into three discrete sections. These are described below.
+    
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[height=0.4\textheight]{figs/AFT_pic.png}
+    \caption{AFT hardware description.}
+    \label{fig:AFT}
+    \end{figure}
+
+    \textbf{Electronics/Reagent Housing:} Backup battery, fiber optics, electronics and reagent bag.\\
+    
+    \textbf{Pump/Valve Housing:} This contains the pump and valve, the components that circulate seawater and reagent through your instrument.
+    
+    \textbf{Sampling Area:} This is where the seawater flows through. It contains the flow cell, mixer, fiber optics and thermistor.
+
+    \textbf{Cable:} See Section \ref{Cable}.
+    
+\fi			%END
